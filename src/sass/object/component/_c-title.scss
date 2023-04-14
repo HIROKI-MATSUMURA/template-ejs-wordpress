@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.c-title {
+  font-size: 10px;
+  @include mq(md) {
+    font-size: 20px;
+  }
+}

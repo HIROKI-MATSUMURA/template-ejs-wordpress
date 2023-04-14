@@ -1,0 +1,68 @@
+<%
+project = '.';
+
+// 連想配列を作ることで、変更箇所をまとめることもできます
+let cardContent = [
+  {title: 'CodeUpsのチーム開発', text: 'EJSを学習しています'},
+  {title: 'CodeUpsのメンバー', text: 'チーム開発を学習しています'},
+  {title: 'コーディング楽しい', text: 'コーディングを学習しています'},
+]
+%>
+
+<!-- 配列の出力方法は複数あります -->
+<ul class="p-cards">
+  <% cardContent.forEach(function(card) { %>
+    <li class="p-cards__item">
+      <%- include(project + '/_p-card', {
+        title: card.title,
+        text: card.text
+        }) %>
+    </li>
+    <% }); %>
+</ul>
+
+<!-- 配列の出力方法は複数あります -->
+<ul class="p-cards">
+  <% for (var item of cardContent) { %>
+    <li class="p-cards__item">
+      <%- include(project + '/_p-card', {
+        title: item.title,
+        text: item.text
+        }) %>
+    </li>
+    <% }; %>
+</ul>
+
+<!-- 配列の出力方法は複数あります -->
+<ul class="p-cards">
+  <% for (var i = 0; i < cardContent.length; i++) { %>
+    <li class="p-cards__item">
+      <%- include(project + '/_p-card', {
+        title: cardContent[i].title,
+        text: cardContent[i].text
+        }) %>
+    </li>
+    <% }; %>
+</ul>
+
+<!-- テスト用にCSSを以下に書いているので、実際はscssファイルを作りそこに書いてください -->
+<style>
+  .p-cards {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+</style>

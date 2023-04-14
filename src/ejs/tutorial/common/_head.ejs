@@ -1,0 +1,25 @@
+<head>
+  <meta name="robots" content="noindex" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <!-- meta情報 -->
+  <title><%= page['title'] %></title>
+  <meta name="description" content="<%= page['description'] %>" />
+  <meta property="og:site_name" content="<%= page['title'] %>" />
+  <meta property="og:url" content="<%= page['url'] %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="<%= page['title'] %>" />
+  <meta property="og:description" content="<%= page['description'] %>" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary_large_image" />
+  
+  <!-- （画像関連） -->
+  <link rel="icon" href="<%= baseUrl %>/images/common/favicon.ico" />
+  <meta property="og:image" content="<%= baseUrl %>/images/common/ogp.jpg" />
+  <!-- css -->
+  <link rel="stylesheet" href="<%= baseUrl %>/assets/css/style.css" />
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script defer src="<%= baseUrl %>/assets/js/script.js"></script>
+</head>

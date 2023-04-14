@@ -1,0 +1,43 @@
+<!-- 有効な色のリストを定義 -->
+<% const validColors = ['blue', 'pink', 'black', 'white']; %>
+
+<!-- 有効な色が指定された場合、その色に応じたクラス名を生成。そうでなければ、空文字列を代入 -->
+<% const colorClass = validColors.includes(color) ? ` c-title--${color}` : ''; %>
+<!-- 
+validColors.includes(color)：includes() メソッドを使って、color が validColors 配列に含まれているかどうかをチェックします。含まれている場合は true を返し、含まれていない場合は false を返します。
+三項演算子（条件演算子）? と : を使用して、上記のチェック結果に基づいて、colorClass に代入する値を決定します。
+true の場合（有効な色が指定された場合）：テンプレートリテラルを使って、対応するクラス名を生成します。例えば、color が 'blue' の場合、クラス名は ' c-title--blue' になります。
+false の場合（無効な色が指定された場合）：空文字列 '' を代入します。これにより、追加のクラス名は出力されず、タイトルにはデフォルトのスタイルが適用されます。 -->
+
+<!-- タイトルを表示し、有効な色に応じたクラス名を追加 -->
+<h2 class="c-title<%- colorClass %>"><%- title %></h2>
+
+
+<!-- テスト用にCSSを以下に書いているので、実際はscssファイルを作りそこに書いてください -->
+<style>
+
+  .c-title {
+    text-align: center;
+    display: inline-block;
+    padding: 0 10px;
+  }
+  .c-title--blue {
+    color: #fff;
+    background-color: #00f;
+  }
+
+  .c-title--pink {
+    color: #fff;
+    background-color: #f0f;
+  }
+
+  .c-title--black {
+    color: #fff;
+    background-color: #000;
+  }
+
+  .c-title--white {
+    color: #000;
+    background-color: #fff;
+  }
+</style>
