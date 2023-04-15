@@ -1,0 +1,35 @@
+<% baseUrlPath='.' ; ejsPath='.' ; pageData="" %>
+<!DOCTYPE html>
+<html lang="ja">
+  <style>
+    .wrapper {
+      display: grid;
+      gap: 20px;
+    }
+    div {
+      margin: 40px 0;
+    }
+    .h2 {
+      margin-top: 75px;
+      background-color: yellow;
+      color: black;
+    }
+    .p {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      color: white;
+    }
+  </style>
+  <body>
+    <h2 class="h2">header</h2>
+    <p class="p">ヘッダー</p>
+    <%- include(ejsPath + '/common/_header' ) %>
+
+    <h2 class="h2">.c-btn</h2>
+    <p class="p">ボタン</p>
+
+    <h2 class="h2">.footer</h2>
+    <p class="p">フッター</p>
+    <%- include(ejsPath + '/common/_footer' ) %>
+  </body>
+</html>
