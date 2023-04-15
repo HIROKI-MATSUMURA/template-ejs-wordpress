@@ -112,12 +112,12 @@ const srcEjsDir = "./ejs";
 const fs = require("fs"); //JSONファイル操作用
 
 const ejsCompile = (done) => {
-  // var jsonFile = "./ejs/pageData/pageData.json",
-  //   json = JSON.parse(fs.readFileSync(jsonFile, "utf8"));
+  var jsonFile = "./ejs/pageData/pageData.json",
+    json = JSON.parse(fs.readFileSync(jsonFile, "utf8"));
 
   // EJSファイルを指定（パーシャルファイル（_ファイル）を除く）
   src([srcEjsDir + "/**/*.ejs", "!" + srcEjsDir + "/**/_*.ejs"])
-    // .pipe(ejs({ json: json }))
+    .pipe(ejs({ json: json }))
     // エラーハンドリングを設定
     .pipe(
       plumber({

@@ -1,25 +1,7 @@
 @use "global" as *;
 
 .c-btn {
-  background-color: #333;
-  border: 1px solid $white;
-  max-width: rem(360);
-  width: 100%;
-  display: inline-block;
-  line-height: 1;
-  font-size: rem(20);
-  padding: rem(20) rem(10);
-  text-align: center;
-  color: $white;
-}
-
-.c-btn--news {
-  @include mq(md){
-    font-size: rem(16);
-    background-color: $white;
-    border: 1px solid $white;
-    max-width: rem(134);
-    padding: rem(7) rem(10);
-    color: $black;
-  }
+  padding: rem(10) rem(40);
+  background-color: black;
+  color: yellow;
 }

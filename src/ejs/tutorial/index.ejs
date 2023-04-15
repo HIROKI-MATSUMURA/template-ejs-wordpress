@@ -1,0 +1,113 @@
+<% baseUrlPath='..' ; ejsPath='.' ; pageData="tutorial" %>
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page: json[pageData] }) %>
+
+  <body>
+    <%- include(ejsPath + '/common/_header' ) %>
+    <main>
+      <style>
+        main {
+          max-width: 1000px;
+          width: 100%;
+          margin: auto;
+        }
+
+        .text {
+          margin: 20px 0;
+          padding: 20px;
+          background-color: #eee;
+        }
+
+        .title {
+          margin: 40px 0 20px;
+          padding: 20px;
+          color: #fff;
+          background-color: #00f;
+        }
+      </style>
+      <div class="title">コメントアウトの違い！！</div>
+      <%# EJS内のコメントアウト %>
+      <div class="text">検証ツールから確認</div>
+      <!-- HTML内のコメントアウト -->
+      <div class="title">変数の設定</div>
+      <% let text1='これは変数を設定しています' %> <% let text2='これは変数を設定しています' %>
+      <div class="text"><%= text1 %></div>
+      <div class="text"><%- text2 %></div>
+
+      <%# - と=の違い %>
+      <div class="title">'%-' と '%=' の違い</div>
+      <% let html='<span>これは変数を<br />設定しています</span>' %>
+      <div class="text"><%= html %></div>
+      <div class="text"><%- html %></div>
+
+      <div class="title">配列からの出力</div>
+      <% let fruits=['りんご', 'バナナ' , 'みかん' ]; %>
+      <ul>
+        <li>フルーツ：<%= fruits[0] %></li>
+        <li>フルーツ：<%= fruits[1] %></li>
+        <li>フルーツ：<%= fruits[2] %></li>
+      </ul>
+
+      <div class="title">連想配列からの出力</div>
+      <% let text3={ title: 'CodeUpsのチーム開発' ,text: 'EJSを学習しています' } %>
+      <div class="text"><%= text3.title %></div>
+      <div class="text"><%- text3.text %></div>
+
+      <div class="title">配列をループで取り出す（for文）</div>
+      <% var sports=['サッカー', 'バスケ' , '野球' ]; %>
+      <ul>
+        <% for(var i=0; i < sports.length; i++) { %>
+        <li><%= sports[i] %></li>
+        <% } %>
+      </ul>
+      <div class="title">複数の連想配列をループで取り出す（for文）</div>
+      <% var people=[ { name: '太郎' , age: 20, gender: '男性' }, { name: '花子' , age: 30, gender: '女性' }, { name: '次郎' , age: 40, gender: '男性' } ]; %>
+      <ul>
+        <% for(var i=0; i < people.length; i++) { %>
+        <li>名前: <%= people[i].name %></li>
+        <li>年齢: <%= people[i].age %></li>
+        <li>性別: <%= people[i].gender %></li>
+        <hr />
+        <% } %>
+      </ul>
+
+      <div class="title">ループで番号を降る（for文）</div>
+      <ul>
+        <% for(var i=1; i < 10; i++) { %>
+        <li>image_<%= i %></li>
+        <hr />
+        <% } %>
+      </ul>
+
+      <div class="title">複数の連想配列をループで取り出す（forEach文）</div>
+      <ul>
+        <% people.forEach(function(person) { %>
+        <li>名前: <%= person.name %></li>
+        <li>年齢: <%= person.age %></li>
+        <li>性別: <%= person.gender %></li>
+        <hr />
+        <% }); %>
+      </ul>
+
+      <div class="title">変数を指定してタイトルを作る</div>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/component/_c-title' ,{
+        color:'blue', title:'カードブロック'
+      }) %>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/component/_c-title' ,{color:'pink', title:'カードブロック'}) %>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/component/_c-title' ,{color:'black', title:'カードブロック'}) %>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/component/_c-title' ,{color:'white', title:'カードブロック'}) %>
+
+      <div class="title">カードブロックをインクルードして表示</div>
+      <%- include(ejsPath + '/project/_p-cards' ) %>
+
+      <div class="title">条件分岐で表示をしてみる！</div>
+      <%- include(ejsPath + '/component/_c-if',{ type:'a' }) %> <%- include(ejsPath + '/component/_c-if',{ type:'' }) %>
+    </main>
+    <%- include(ejsPath + '/common/_footer' ) %>
+  </body>
+</html>

@@ -1,30 +1,12 @@
 <% baseUrlPath='.' ; ejsPath='.' ; pageData="top" %>
 <!DOCTYPE html>
 <html lang="ja">
-  <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath}) %>
+  <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page:
+  json[pageData] }) %>
 
   <body>
     <%- include(ejsPath + '/common/_header' ) %>
     <main>
-      <%- include(ejsPath + '/project/_p-mv') %>
-      <section class="l-news">
-        <%- include(ejsPath + '/project/_p-news') %>
-      </section>
-      <section class="l-content">
-        <%- include(ejsPath + '/project/_p-content') %>
-      </section>
-      <section class="l-works">
-        <%- include(ejsPath + '/project/_p-works') %>
-      </section>
-      <section class="l-overview">
-        <%- include(ejsPath + '/project/_p-overview') %>
-      </section>
-      <section class="l-blog">
-        <%- include(ejsPath + '/project/_p-blog') %>
-      </section>
-      <section class="l-contact">
-        <%- include(ejsPath + '/project/_p-contact') %>
-      </section>
     </main>
     <%- include(ejsPath + '/common/_footer' ) %>
   </body>

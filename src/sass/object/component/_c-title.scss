@@ -1,43 +1,8 @@
 @use "global" as *;
 
 .c-title {
-  line-height: 1;
-  font-weight: $normal;
-  color: $white;
-  position: relative;
-}
-
-.c-title__main {
-  text-align: center;
-  font-size: rem(20);
-  @include mq(md){
-    font-size: rem(30);
-  }
-}
-
-.c-title__sub {
-  font-family: $second-font-family;
-  font-size: rem(50);
-  color: $yellow;
-  text-transform: capitalize;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: rem(-48);
-  opacity: 0.27;
-  z-index: -1;
-  @include mq(md){
-    font-size: rem(110);
-    transform: initial;
-    left: 0;
-  top: rem(-26);
-
-  }
-}
-
-.c-title__sub--right {
-  @include mq(md){
-    left: initial;
-    right: 0;
+  font-size: 10px;
+  @include mq(md) {
+    font-size: 20px;
   }
 }
