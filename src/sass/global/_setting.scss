@@ -16,13 +16,10 @@ $padding-sp: 20px;
 // フォント設定
 ////////////////////
 
-$base-font-family: "";
-$second-font-family: "";
+$base-font-family: 'Noto Sans JP', sans-serif;;
+$second-font-family: 'Noto Serif JP', serif;;
 // ※検証ツールでしっかり反映されているか確認する
 
-body {
-  font-family: $base-font-family;
-}
 
 // フォントウェイト
 $regular: 300;
@@ -36,37 +33,13 @@ $bold: 700;
 //色指定（共通性のあるものは出来る限り指定すると良い）
 $black: #111;
 $white: #fff;
+$yellow: #F9F871;
 
 
-// @if $startFrom == sp {
-//   //768px以上を表示
-//   .u-desktop {
-//     display: none;
-//     @include mq("md") {
-//       display: block;
-//     }
-//   }
-
-//   //モバイルのみ表示
-//   .u-mobile {
-//     @include mq("md") {
-//       display: none;
-//     }
-//   }
-// } @else {
-//   //768px以上を表示
-//   .u-desktop {
-//     display: block;
-//     @include mq("md") {
-//       display: none;
-//     }
-//   }
-
-//   //モバイルのみ表示
-//   .u-mobile {
-//     display: none;
-//     @include mq("md") {
-//       display: block;
-//     }
-//   }
-// }
+body {
+  font-family: $base-font-family;
+  background-color: $black;
+  color: $white;
+  position: relative;
+  z-index: -111111;
+}

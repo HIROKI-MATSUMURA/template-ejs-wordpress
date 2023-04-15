@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.l-news {
+  margin-top: rem(24);
+  @include mq(md) {
+    margin-top: rem(32);
+  }
+}

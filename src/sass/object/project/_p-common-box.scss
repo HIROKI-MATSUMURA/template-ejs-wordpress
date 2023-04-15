@@ -1,0 +1,76 @@
+@use "global" as *;
+
+.p-common-box__items {
+  display: block;
+  @include mq(md) {
+    display: flex;
+    gap: 3%;
+  }
+}
+
+.p-common-box__items--reverse {
+  @include mq(md) {
+    flex-direction: row-reverse;
+  }
+}
+
+.p-common-box__item-img {
+  @include mq(md) {
+    width: 50.6%;
+  }
+}
+
+.p-common-box__item-text {
+  margin-top: rem(24);
+  @include mq(md) {
+    margin-top: 0;
+    width: 46.4%;
+  }
+}
+
+.p-common-box__img {
+}
+
+.p-common-box__swiper {
+  position: relative;
+}
+
+.p-common-box__title {
+  font-size: rem(20);
+  text-align: center;
+  @include mq(md) {
+    text-align: left;
+    font-size: rem(25);
+  }
+}
+
+.p-common-box__text {
+  margin-top: rem(24);
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}
+
+.p-common-box__btn {
+  margin-top: rem(14);
+  text-align: center;
+  @include mq(md) {
+    margin-top: rem(48);
+    text-align: left;
+  }
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: rem(-30);
+}
+
+.swiper-pagination-bullet {
+  background: #c4c4c4;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f9f871;
+}

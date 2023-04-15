@@ -1,0 +1,7 @@
+@use "global" as *;
+
+.p-works__content {
+	margin-top: rem(48);
+	padding: 5rem 0;
+	background: linear-gradient(90deg, transparent 0, transparent 30%, #333 30%, #333 100%);
+}

@@ -1,0 +1,31 @@
+@use "global" as *;
+
+.p-content-card {
+
+}
+
+.p-content-card__items {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	@include mq(md){
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+.p-content-card__item {
+	aspect-ratio: 1;
+	overflow: hidden;
+	position: relative;
+}
+
+.p-content-card__title {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
+	text-align: center;
+	font-size: rem(20);
+	@include mq(md){
+		font-size: rem(25);
+	}
+}

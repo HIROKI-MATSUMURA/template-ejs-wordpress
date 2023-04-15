@@ -5,9 +5,9 @@
     .wrapper {
       display: grid;
       gap: 20px;
-    }
-    div {
-      margin: 40px 0;
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
     }
     .h2 {
       margin-top: 75px;
@@ -19,14 +19,64 @@
       margin-bottom: 20px;
       color: white;
     }
+    body {
+      background-color: #111;
+      color: #fff;
+    }
   </style>
   <body>
+    <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath}) %>
+
     <h2 class="h2">header</h2>
     <p class="p">ヘッダー</p>
     <%- include(ejsPath + '/common/_header' ) %>
 
     <h2 class="h2">.c-btn</h2>
-    <p class="p">ボタン</p>
+    <p class="p">ボタンaaa</p>
+    <%- include(ejsPath + '/component/_c-btn',{position:"", link:"", text:"詳しく見る"} ) %>
+    <!-- prettier-ignore -->
+    <%- include(ejsPath + '/component/_c-btn',{position:"", link:"", text:"すべて見る"} ) %>
+    <!-- prettier-ignore -->
+    <%- include(ejsPath + '/component/_c-btn',{position:"", link:"", text:"お問い合わせへ"} ) %>
+
+    <h2 class="h2">.c-title</h2>
+    <p class="p">共通のセクションタイトル</p>
+    <%- include(ejsPath + '/component/_c-title',{ja:"事業内容", en:"content", position:''} ) %>
+    <!-- prettier-ignore -->
+    <%- include(ejsPath + '/component/_c-title',{ja:"制作実績", en:"works", position:'right'} ) %>
+    <!-- prettier-ignore -->
+    <%- include(ejsPath + '/component/_c-title',{ja:"企業概要", en:"overview", position:''} ) %>
+    <!-- prettier-ignore -->
+    <%- include(ejsPath + '/component/_c-title',{ja:"ブログ", en:"blog", position:'right'} ) %>
+    <!-- prettier-ignore -->
+    <%- include(ejsPath + '/component/_c-title',{ja:"お問い合わせ", en:"contact", position:''} ) %>
+
+    <h2 class="h2">.c-text</h2>
+    <p class="p">テキスト</p>
+    <%- include(ejsPath + '/component/_c-text',{text:"あああああああああああああ"} ) %>
+    <!-- prettier-ignore -->
+    <%- include(ejsPath + '/component/_c-text',{text:"あああああああ<br>ああああああ"} ) %>
+
+    <h2 class="h2">.c-card</h2>
+    <p class="p">カード</p>
+    <%- include(ejsPath + '/project/_p-cards') %>
+
+    <h2 class="h2">.p-content-card</h2>
+    <p class="p">事業内容カード</p>
+    <%- include(ejsPath + '/project/_p-content-card') %>
+    <h2 class="h2">.p-common-box</h2>
+    <p class="p">共通ブロック</p>
+    <%- include(ejsPath + '/project/_p-common-box',{position: '', type:'' }) %>
+    <!-- prettier-ignore -->
+    <%- include(ejsPath + '/project/_p-common-box',{position: 'reverse', type:'img' }) %>
+
+    <h2 class="h2">.p-mv</h2>
+    <p class="p">メインビュー</p>
+    <%- include(ejsPath + '/project/_p-mv') %>
+
+    <h2 class="h2">.p-news</h2>
+    <p class="p">ニュース</p>
+    <%- include(ejsPath + '/project/_p-news') %>
 
     <h2 class="h2">.footer</h2>
     <p class="p">フッター</p>
