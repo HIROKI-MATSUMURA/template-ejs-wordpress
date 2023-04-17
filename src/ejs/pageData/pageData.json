@@ -5,8 +5,8 @@
     "url": "https://aaa.com"
   },
   "tutorial": {
-    "title": "チュートリアル",
-    "description": "チュートリアルのコンテンツ",
-    "url": "https://turorial.com"
+    "title": "チュートリアルのページタイトル",
+    "description": "チュートリアルのコンテンツです！",
+    "url": "https://turorialtest.com"
   }
 }

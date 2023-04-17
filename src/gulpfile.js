@@ -51,10 +51,6 @@ const destWpPath = {
 
 const browsers = ["last 2 versions", "> 5%", "ie = 11", "not ie <= 10", "ios >= 8", "and_chr >= 5", "Android >= 5"];
 
-// HTMLファイルのコピー
-const htmlCopy = () => {
-  return src(srcPath.html).pipe(dest(destPath.html));
-};
 
 const cssSass = () => {
   // ソースファイルを指定
@@ -117,7 +113,6 @@ const ejsCompile = (done) => {
 
   // EJSファイルを指定（パーシャルファイル（_ファイル）を除く）
   src([srcEjsDir + "/**/*.ejs", "!" + srcEjsDir + "/**/_*.ejs"])
-    .pipe(ejs({ json: json }))
     // エラーハンドリングを設定
     .pipe(
       plumber({
@@ -129,6 +124,7 @@ const ejsCompile = (done) => {
         }),
       })
     )
+    .pipe(ejs({ json: json }))
     // EJSファイルをHTMLにコンパイル
     .pipe(ejs({}))
     // 拡張子を.htmlに変更
