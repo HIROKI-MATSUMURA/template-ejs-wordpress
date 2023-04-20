@@ -19,6 +19,7 @@ const imageminMozjpeg = require("imagemin-mozjpeg"); // JPEGを最適化する�
 const imageminPngquant = require("imagemin-pngquant"); // PNGを最適化するためのモジュール
 const changed = require("gulp-changed"); // 変更されたファイルのみを対象にするためのモジュール
 const del = require("del"); // ファイルやディレクトリを削除するためのモジュール
+const webp = require('gulp-webp');//webp変換
 
 const themeName = "WordPressTheme"; // WordPress theme name
 // 読み込み先
@@ -178,6 +179,10 @@ const imgImagemin = () => {
           }
         )
       )
+      // 圧縮済みの画像ファイルを出力先に保存
+      .pipe(dest(destPath.img))
+      .pipe(dest(destWpPath.img))
+      .pipe(webp())//webpに変換
       // 圧縮済みの画像ファイルを出力先に保存
       .pipe(dest(destPath.img))
       .pipe(dest(destWpPath.img))
