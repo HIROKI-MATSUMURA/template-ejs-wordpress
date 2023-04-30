@@ -3,8 +3,9 @@
 <html lang="ja">
   <style>
     .wrapper {
-      display: grid;
-      gap: 20px;
+      max-width: 1000px;
+      width: 100%;
+      margin: auto;
     }
     div {
       margin: 40px 0;
@@ -21,15 +22,25 @@
     }
   </style>
   <body>
-    <h2 class="h2">header</h2>
-    <p class="p">ヘッダー</p>
-    <%- include(ejsPath + '/common/_header' ) %>
+    <div class="wrapper">
+      <h2 class="h2">header</h2>
+      <p class="p">ヘッダー</p>
+      <%- include(ejsPath + '/common/_header' ) %>
 
-    <h2 class="h2">.c-btn</h2>
-    <p class="p">ボタン</p>
+      <h2 class="h2">.c-title</h2>
+      <p class="p">セクションタイトル</p>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/tutorial/component/_c-title' ,{color:'blue', title:'ここ変えてみる'}) %>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/tutorial/component/_c-title' ,{color:'pink', title:'カードブロック'}) %>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/tutorial/component/_c-title' ,{color:'black', title:'カードブロック'}) %>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/tutorial/component/_c-title' ,{color:'white', title:'カードブロック'}) %>
 
-    <h2 class="h2">.footer</h2>
-    <p class="p">フッター</p>
-    <%- include(ejsPath + '/common/_footer' ) %>
+      <h2 class="h2">.footer</h2>
+      <p class="p">フッター</p>
+      <%- include(ejsPath + '/common/_footer' ) %>
+    </div>
   </body>
 </html>

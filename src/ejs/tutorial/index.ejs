@@ -30,10 +30,10 @@
       <%# EJS内のコメントアウト %>
       <div class="text">検証ツールから確認</div>
       <!-- HTML内のコメントアウト -->
+
       <div class="title">変数の設定</div>
-      <% let text1='これは変数を設定しています' %> <% let text2='これは変数を設定しています' %>
+      <% let text1='これは変数を設定しています' %>
       <div class="text"><%= text1 %></div>
-      <div class="text"><%- text2 %></div>
 
       <%# - と=の違い %>
       <div class="title">'%-' と '%=' の違い</div>
@@ -61,6 +61,7 @@
         <li><%= sports[i] %></li>
         <% } %>
       </ul>
+
       <div class="title">複数の連想配列をループで取り出す（for文）</div>
       <% var people=[ { name: '太郎' , age: 20, gender: '男性' }, { name: '花子' , age: 30, gender: '女性' }, { name: '次郎' , age: 40, gender: '男性' } ]; %>
       <ul>
@@ -92,9 +93,7 @@
 
       <div class="title">変数を指定してタイトルを作る</div>
       <!-- prettier-ignore -->
-      <%- include(ejsPath + '/component/_c-title' ,{
-        color:'blue', title:'カードブロック'
-      }) %>
+      <%- include(ejsPath + '/component/_c-title' ,{color:'blue', title:'ここ変えてみる'}) %>
       <!-- prettier-ignore -->
       <%- include(ejsPath + '/component/_c-title' ,{color:'pink', title:'カードブロック'}) %>
       <!-- prettier-ignore -->
@@ -106,7 +105,9 @@
       <%- include(ejsPath + '/project/_p-cards' ) %>
 
       <div class="title">条件分岐で表示をしてみる！</div>
-      <%- include(ejsPath + '/component/_c-if',{ type:'a' }) %> <%- include(ejsPath + '/component/_c-if',{ type:'' }) %>
+      <%- include(ejsPath + '/component/_c-if',{ type:'a' }) %>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/component/_c-if',{ type:'' }) %>
     </main>
     <%- include(ejsPath + '/common/_footer' ) %>
   </body>
