@@ -25,9 +25,7 @@ $mediaquerys: (
     lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
     xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",
   );
-
 } @else {
-  
   $breakpoints: (
     xl: 1440,
     lg: 1023,
@@ -46,5 +44,38 @@ $mediaquerys: (
 @mixin mq($mediaquery: md) {
   @media #{map-get($mediaquerys, $mediaquery)} {
     @content;
+  }
+}
+
+@if $startFrom == sp {
+  //pcで表示
+  .u-desktop {
+    display: none;
+    @include mq("md") {
+      display: block;
+    }
+  }
+
+  //モバイルのみ表示
+  .u-mobile {
+    @include mq("md") {
+      display: none;
+    }
+  }
+} @else {
+  //pcで表示
+  .u-desktop {
+    display: block;
+    @include mq("md") {
+      display: none;
+    }
+  }
+
+  //モバイルのみ表示
+  .u-mobile {
+    display: none;
+    @include mq("md") {
+      display: block;
+    }
   }
 }

@@ -38,35 +38,4 @@ $black: #111;
 $white: #fff;
 
 
-// @if $startFrom == sp {
-//   //768px以上を表示
-//   .u-desktop {
-//     display: none;
-//     @include mq("md") {
-//       display: block;
-//     }
-//   }
 
-//   //モバイルのみ表示
-//   .u-mobile {
-//     @include mq("md") {
-//       display: none;
-//     }
-//   }
-// } @else {
-//   //768px以上を表示
-//   .u-desktop {
-//     display: block;
-//     @include mq("md") {
-//       display: none;
-//     }
-//   }
-
-//   //モバイルのみ表示
-//   .u-mobile {
-//     display: none;
-//     @include mq("md") {
-//       display: block;
-//     }
-//   }
-// }
